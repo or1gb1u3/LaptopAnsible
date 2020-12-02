@@ -1,9 +1,31 @@
 - hosts: localhost
   become: true
+  vars:
+    # extra apt repos
+      my_apt_repos:
+        wavebox:
+          repo: 'deb [arch=amd64] https://download.wavebox.app/latest/stable/linux/deb/ stable main'
+          file: wavebox
+        syncthing:
+          repo: 'deb https://apt.syncthing.net/ syncthing stable'
+          file: syncthing
   tasks:
-  - name: install git
-    apt: name=git
+  - name: Add the Syncthing keys
+    apt_key:
+      url: https://syncthing.net/release-key.txt
+      state: present
 
-  - name: install vim
-    apt: name=vim
+  - name: Install from my_apt_repos
+    apt_repository:
+      repo: '{{ item.value.repo }}'
+      filename: '{{ item.value.file}}'
+      state: present
+    loop: ' {{ my_apt_repos | default({}) | dict2items }}'
 
+  - name: install software
+    apt: name={{item}}
+    with_items:
+    - git
+    - vim
+    - wavebox
+    - syncthing 
