@@ -1,9 +1,9 @@
 - hosts: localhost
-become: true
-tasks:
-- name: install git
-apt: name=git
+  become: true
+  tasks:
+  - name: install git
+    apt: name=git
 
--name: install vim
-apt: name=vim
+  -name: install vim
+   apt: name=vim
 
