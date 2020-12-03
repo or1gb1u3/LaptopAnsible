@@ -17,17 +17,10 @@
     apt:
       update_cache: yes
 
-  - name: Install Wavebox Repo
-    apt_repository:
-      repo: 'deb https://download.wavebox.app/stable/linux/deb/ amd64/'       
-      filename: wavebox
-      state: present
-
   - name: install software
     apt: name={{item}}
     with_items:
     - traceroute
     - git
     - vim
-    - wavebox
     - syncthing 
