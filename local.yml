@@ -20,7 +20,7 @@
       repo: '{{ item.value.repo }}'
       filename: '{{ item.value.file}}'
       state: present
-    loop: ' {{ my_apt_repos | dict2items }}'
+    loop: ' {{ my_apt_repos | default({}) | dict2items }}'
 
   - name: install software
     apt: name={{item}}
