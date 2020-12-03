@@ -8,6 +8,7 @@
       state: present
 
   - name: Install Syncthing
+    apt_repository:
       repo: 'deb https://apt.syncthing.net/ syncthing stable'
       file: syncthing
       state: present
