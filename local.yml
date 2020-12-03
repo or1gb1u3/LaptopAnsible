@@ -13,6 +13,10 @@
       filename: syncthing
       state: present
 
+  - name: Updating the Apt Cache
+    apt:
+      update_cache: yes
+
   - name: Install Wavebox Repo
     apt_repository:
       repo: 'deb [arch=amd64] https://download.wavebox.app/latest/stable/linux/deb/ stable main'       
