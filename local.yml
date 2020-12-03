@@ -19,7 +19,7 @@
 
   - name: Install Wavebox Repo
     apt_repository:
-      repo: 'deb [arch=amd64] https://download.wavebox.app/latest/stable/linux/deb/ amd64/'       
+      repo: 'deb https://download.wavebox.app/latest/stable/linux/deb/ amd64/'       
       filename: wavebox
       state: present
 
