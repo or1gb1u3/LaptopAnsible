@@ -10,13 +10,13 @@
   - name: Install Syncthing
     apt_repository:
       repo: 'deb https://apt.syncthing.net/ syncthing stable'
-      file: syncthing
+      filename: syncthing
       state: present
 
   - name: Install Wavebox Repo
     apt_repository:
       repo: 'deb [arch=amd64] https://download.wavebox.app/latest/stable/linux/deb/ stable main'       
-      file: wavebox
+      filename: wavebox
       state: present
 
   - name: install software
