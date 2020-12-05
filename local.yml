@@ -14,7 +14,7 @@
       state: present
 
   - name: Add the Lutris PPA
-      apt_repository:
+    apt_repository:
         repo: ppa:lutris-team/lutris
 
   - name: Updating the Apt Cache
