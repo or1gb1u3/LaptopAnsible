@@ -13,6 +13,10 @@
       filename: syncthing
       state: present
 
+  - name: Add the Lutris PPA
+      apt_repository:
+        repo: ppa:lutris-team/lutris
+
   - name: Updating the Apt Cache
     apt:
       update_cache: yes
@@ -20,10 +24,12 @@
   - name: install software
     apt: 
       name: "{{item}}"
-    with_items:
+      state: latest
+    loop:
     - traceroute
     - git
     - vim
     - syncthing 
     - keepassxc
-    - luris
+    - wine
+    - lutris
