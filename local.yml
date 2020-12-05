@@ -18,7 +18,8 @@
       update_cache: yes
 
   - name: install software
-    apt: name={{item}}
+    apt: 
+      name:{{item}}
     with_items:
     - traceroute
     - git
