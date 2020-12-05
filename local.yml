@@ -19,7 +19,7 @@
 
   - name: install software
     apt: 
-      name: {{item}}
+      name: "{{item}}"
     with_items:
     - traceroute
     - git
