@@ -17,6 +17,10 @@
     apt_repository:
         repo: ppa:lutris-team/lutris
 
+  - name: Add Wavebox
+    apt:
+      deb: https://download.wavebox.app/latest/stable/linux/deb
+
   - name: Updating the Apt Cache
     apt:
       update_cache: yes
