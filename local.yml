@@ -38,7 +38,11 @@
     - wine
     - lutris
     - libreoffice
-    - simplenote
     - tilda
     - inkscape
     - gimp
+
+  - name: install simple note
+    community.gneral.snap:
+     name:
+       - simplenote
